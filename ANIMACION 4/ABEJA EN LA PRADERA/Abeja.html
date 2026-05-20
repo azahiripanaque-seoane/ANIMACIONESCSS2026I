@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>ABEJA EN LA PRADERA</title>
+        <style>
+            *{
+                margin:0px;
+                padding:0px;
+            }
+            .contenedor{
+                width: 800px;
+                height: 300px;
+                border:1px solid black;
+                margin: 0 auto;
+                position: relative;
+                overflow: hidden; /* para que el contenedor se vea como una ventana */
+            }
+            .cuadrito{
+                width: 100px;
+                height: 100px;
+                position:absolute;
+                top:0px;
+                left:0px;
+
+                animation: cuadrito 4s infinite 1s;
+            }
+             .cuadrito2{
+                width: 100px;
+                height: 100px;
+                position:absolute;
+                top:0px;
+                left:0px;
+
+                animation: cuadrito 5s infinite 3s;
+
+            }
+            .cuadrito img{
+                width: 100%;
+                rotate:45deg;
+            }
+            .cuadrito .img2{
+                width: 100%;
+                rotate:50deg;
+            }
+            .abeja{
+                position: absolute;
+                width: 100%;
+                z-index: 0;
+            }
+            .abeja2{
+                position: absolute;
+                width: 80%;
+                left: -100px;
+                z-index: 0;
+            }
+            @keyframes cuadrito{                  
+                0%{
+                    top: 0px; /* 200px  Inversa*/ 
+                    left:-100px;/* se mantiene igual */
+                    rotate:45deg;
+
+                }
+                50%{
+                    top: 200px; /* 0px  Inversa*/
+                    left: 350px;/* se mantiene igual */
+                    rotate:0deg;
+
+                }
+                100%{
+                    top:0px;  /* 700px  Inversa*/
+                    left:800px;/* se mantiene igual */
+                    rotate:45deg;
+
+                }
+            }
+            .pradera{
+                position:absolute;
+                top:-450px;
+                left:0px ;
+                width: 100%;
+                z-index: -1;
+            }
+            .cielo{
+                position: absolute;
+                top:0px;
+                left: 0px;
+                width: 100%;
+                z-index: -2;
+            }       
+        </style>
+    </head>
+    <body>
+        <div class="contenedor">
+
+            <div class="cuadrito">
+                <img class= "abeja"src="img/abeja.png" alt="">               
+            </div>
+            <div class="cuadrito2">
+                <img class= "abeja"src="img/abeja.png" alt="">               
+            </div>
+
+            <img class= "pradera"src="img/pradera.png" alt="">
+            <img class= "cielo"src="img/cielo.png" alt="">
+
+
+        </div>
+    </body>
+</html>
