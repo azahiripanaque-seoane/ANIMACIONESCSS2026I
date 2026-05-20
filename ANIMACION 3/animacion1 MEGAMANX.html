@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>ANIMACION 3 VERTICAL MEGAMANX CSS</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+    
+        .contenedor{
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        .cuadrito{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            position: absolute;
+            top: -100px;
+            left: 150px;
+            animation: cuadrito 3s infinite linear;
+        }
+
+        @keyframes cuadrito{
+            from{
+                top: -100px;
+            }
+            to{
+                top: 200px;
+            }
+        }
+        .cuadrito img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="cuadrito">
+            <img src="img/megamanx.gif" alt="">
+        </div>
+    </div>
+</body>
+</html>
