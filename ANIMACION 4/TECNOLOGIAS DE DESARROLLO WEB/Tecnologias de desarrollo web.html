@@ -1,0 +1,167 @@
+<html>
+<head>
+<title>TECNOLOGIAS DE DESARROLLO WEB</title>
+<style>
+*{
+    padding:0px;
+    margin:0px;
+    background-color: black;
+}
+.contenedor{
+    width: 1000px;
+    height:300px;
+    border:1px solid black;
+    margin:0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.tarjeta1, .tarjeta2, .tarjeta3, .tarjeta4, .tarjeta5{
+    width:200px;
+    height:300px;
+    position: absolute;
+    top:-300px;
+    background-size: cover;
+}
+.tarjeta1{
+    background-image: url(img/HTML.jpg);
+    left:0px;
+    animation: tarjeta1 3s 1 forwards;
+}
+.tarjeta2{
+    background-image: url(img/CSS.jpg);
+    left:200px;
+    animation:tarjeta1 3s 1 forwards 3s;
+}
+.tarjeta3{
+    background-image: url(img/JS.jpg);
+    left:400px;
+    animation: tarjeta1 3s 1 forwards 6s;
+}
+.tarjeta4{
+    background-image: url(img/PHP.jpg);
+    left:600px;
+    animation: tarjeta1 3s 1 forwards 9s;
+}
+.tarjeta5{
+    background-image: url(img/BOOTSTRAP.jpg);
+    left:800px;
+    animation: tarjeta1 3s 1 forwards 12s;
+}
+/*LAS RICAS ANIMACIONES*/
+@keyframes tarjeta1{
+    0%{
+        top:-800px;
+        transform: rotateY(180deg);
+    }
+    50%{
+        top:300px;
+    }
+    100%{
+        top:0px;
+    }
+}
+@keyframes tarjeta2{
+    0%{
+        top:-300px;
+        transform: rotateY(180deg);
+    }
+    50%{
+        top:300px;
+    }
+    100%{
+        top:0px;
+    }
+}
+@keyframes tarjeta3{
+    0%{
+        top:-300px;
+        transform: rotateY(180deg);
+    }
+    50%{
+        top:300px;
+    }
+    100%{
+        top:0px;
+    }
+}
+@keyframes tarjeta4{
+    0%{
+        top:-300px;
+        transform: rotateY(180deg);
+    }
+    50%{
+        top:300px;
+    }
+    100%{
+        top:0px;
+    }
+}
+@keyframes tarjeta5{
+    0%{
+        top:-300px;
+        transform: rotateY(180deg);
+    }
+    50%{
+        top:300px;
+    }
+    100%{
+        top:0px;
+    }
+}
+/*EVENTOS*/
+.tarjeta1:hover{
+    transition: 1s;
+    scale: 1.2;
+    z-index: 1;
+}
+.tarjeta2:hover{
+    transition: 1s;
+    scale: 1.2;
+    z-index: 1;
+}
+.tarjeta3:hover{
+    transition: 1s;
+    scale: 1.2;
+    z-index: 1;
+}
+.tarjeta4:hover{
+    transition: 1s;
+    scale: 1.2;
+    z-index: 1;
+}
+.tarjeta5:hover{
+    transition: 1s;
+    scale: 1.2;
+    z-index: 1;
+}
+.titulo{
+    width: 1000px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.274);
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    font-family: 'impact';
+    font-size: 50px;
+    padding-top: 30px;
+    top:145px;
+    animation: titulo 1s 1 forwards;
+}
+.titulo:hover{
+    transition: 1s;
+    scale: 1.1;
+    z-index: 1;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+    <div class="tarjeta1"></div>
+    <div class="tarjeta2"></div>
+    <div class="tarjeta3"></div>
+    <div class="tarjeta4"></div>
+    <div class="tarjeta5"></div>
+    <div class="titulo">TECNOLOGIAS DE DESARROLLO DE SOFTWARE</div>
+</div>    
+</body>
+</html>
