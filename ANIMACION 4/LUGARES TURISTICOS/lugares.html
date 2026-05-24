@@ -6,6 +6,37 @@
                 margin:0px;
                 padding:0px;
             }
+             body {
+                font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                background-color: #f8f9fa;
+                color: #333333;
+                padding: 40px;
+                padding-top: 100px; /* Evita que el botón tape el título */
+                max-width: 600px;
+                margin: 0 auto;
+            }
+             .btn-volver {
+                  position: fixed !important;   /* Lo fija en la pantalla */
+                  top: 25px !important;         /* Distancia superior */
+                  left: 25px !important;        /* Distancia izquierda */
+                  color: #ffffff !important;    /* Texto blanco */
+                  text-decoration: none !important;
+                  font-size: 16px;
+                  background-color: #333333;    /* Fondo oscuro */
+                  padding: 10px 20px;
+                  border-radius: 8px;
+                  border: 1px solid #555555;
+                  z-index: 99999 !important;    /* Prioridad máxima */
+                  transition: all 0.2s ease;
+                  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+                }
+
+        /* EFECTO HOVER DEL BOTÓN VOLVER */
+        .btn-volver:hover {
+            background-color: #444444;
+            border-color: #777777;
+            transform: scale(1.05);
+        }
             .contenedor{
                 width: 800px;
                 height: 300px;
@@ -139,6 +170,7 @@
         </style>
     </head>
     <body>
+         <a href="../index.html" class="btn-volver">Volver</a>
         <div class="contenedor">
             <div class="marco1"></div>
             <div class="marco2"></div>
@@ -149,3 +181,4 @@
         </div>
     </body>
 </html>
+
