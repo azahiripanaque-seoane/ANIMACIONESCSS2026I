@@ -1,18 +1,44 @@
 <html>
 <head>
-    <title>ANIMACION 3 HORIZONTAL MEGAMANX CSS</title>
+
+    <title>ANIMACION 3 DIAGONAL MEGAMANX CSS</title>
     <style>
         *{
-            padding: 0px;
-            margin: 0px;
+            padding: 0;
+            margin: 0;
+        }
+          body {
+            padding-top: 100px; 
+            background-color: #ffffff;
+        }
+        .btn-volver {
+            position: fixed !important;  
+            top: 25px !important;         
+            left: 25px !important;        
+            color: #ffffff !important;    
+            text-decoration: none !important;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            background-color: #333333;    
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #555555;
+            z-index: 99999 !important;    
+            transition: all 0.2s ease;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .btn-volver:hover {
+            background-color: #444444;
+            border-color: #777777;
+            transform: scale(1.05);
         }
         .contenedor{
             width: 400px;
             height: 200px;
             border: 1px solid black;
-            position: relative;/*para centrar el div*/
-            margin: 0 auto;/*para centrar el div*/
-            overflow:hidden;/*muestra solo lo interior*/
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
             background-color: black;
         }
 
@@ -20,41 +46,34 @@
             width: 100px;
             height: 100px;
             background-color: black;
-            position:absolute;/*permite mover el div*/
+            position: absolute;
             left: -100px;
-            top: 50px;
-
+            top: -100px;
             animation: cuadrito 3s infinite linear;
         }
-        
+
         @keyframes cuadrito{
             from{
                 left: -100px;
-
+                top: -100px;
             }
             to{
-
-                left:500px;
+                left: 500px;
+                top: 200px;
             }
         }
         .cuadrito img{
             width: 100px;
             height: 100px;
         }
-
-
     </style>
 </head>
 <body>
+     <a href="index.html" class="btn-volver">Volver</a>
     <div class="contenedor">
-
         <div class="cuadrito">
-
             <img src="img/megamanx.gif" alt="">
-
         </div>
-
     </div>
-      
 </body>
 </html>
