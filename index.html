@@ -1,31 +1,198 @@
 <html>
 <head>
-    <title></title>
-    <style></style>
+    <title>Mis Proyectos</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: #050814;
+            overflow: hidden;
+        }
+
+        /*  FONDO DE CÓDIGO (NUEVO) */
+        .fondo {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .fondo span {
+            position: absolute;
+            top: -50px;
+            color: rgba(0, 255, 180, 0.25);
+            font-family: monospace;
+            font-size: 14px;
+            animation: caer 10s linear infinite;
+        }
+
+        @keyframes caer {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+        }
+
+        /* posiciones del fondo */
+        .fondo span:nth-child(1) { left: 5%; animation-duration: 6s; }
+        .fondo span:nth-child(2) { left: 15%; animation-duration: 7s; }
+        .fondo span:nth-child(3) { left: 25%; animation-duration: 5s; }
+        .fondo span:nth-child(4) { left: 35%; animation-duration: 8s; }
+        .fondo span:nth-child(5) { left: 45%; animation-duration: 6s; }
+        .fondo span:nth-child(6) { left: 55%; animation-duration: 7s; }
+        .fondo span:nth-child(7) { left: 65%; animation-duration: 5s; }
+        .fondo span:nth-child(8) { left: 75%; animation-duration: 8s; }
+        .fondo span:nth-child(9) { left: 85%; animation-duration: 6s; }
+        .fondo span:nth-child(10) { left: 95%; animation-duration: 7s; }
+
+        /* HEADER (TU ANIMACIÓN ORIGINAL CONSERVADA) */
+        h1 {
+            text-align: center;
+            padding: 25px;
+            margin: 0;
+            background: #0f1a33;
+            color: #00ffd5;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #00ffd5;
+
+            animation: bajar 1s ease-out;
+        }
+
+        @keyframes bajar {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .contenedor {
+            padding: 50px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        li {
+            margin: 18px 0;
+            animation: aparecer 0.8s ease forwards;
+        }
+
+        li:nth-child(1) { animation-delay: 0.1s; }
+        li:nth-child(2) { animation-delay: 0.2s; }
+        li:nth-child(3) { animation-delay: 0.3s; }
+        li:nth-child(4) { animation-delay: 0.4s; }
+        li:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        a {
+            display: block;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #e5e7eb;
+            text-decoration: none;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 213, 0.2);
+            font-size: 16px;
+
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(0,255,213,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        a:hover::before {
+            left: 100%;
+        }
+
+        a:hover {
+            transform: scale(1.05);
+            border: 1px solid #00ffd5;
+            color: #00ffd5;
+            box-shadow: 0 0 20px rgba(0,255,213,0.3);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 13px;
+            animation: aparecer 1s ease;
+        }
+    </style>
 
 </head>
+
 <body>
-    <h1> MIS PROYECTOS DE ANIMACION WEB</h1>
+<div class="fondo">
+    <span>&lt;html&gt;</span>
+    <span>function()</span>
+    <span>const x=10;</span>
+    <span>&lt;body&gt;</span>
+    <span>if(true)</span>
+    <span>CSS</span>
+    <span>PHP</span>
+    <span>div{}</span>
+    <span>while()</span>
+    <span>return;</span>
+</div>
+
+<h1> PROYECTOS DE ANIMACIÓN DE GRAFICOS<br>
+    DE IPANAQUE VALDEZ ZAHIR ARNOLD</h1>
+
+<div class="contenedor">
+
     <ul>
-        <li>
-            <a href="ANIMACION 1/index.html"> Proyecto 1 - Tablero de Ajedrez</a>                               
-        </li>
-
-        <li>
-            <a href="ANIMACION 2/index.html"> Proyecto 2 - Animacion Basica </a>
-        </li>
-
-        <li>
-            <a href="ANIMACION 3/index.html"> Proyecto 3 - Movimiento y Tiempo de Animación</a>
-        </li>
-
-        <li>
-            <a href="ANIMACION 4/index.html"> Proyecto 4 - Animación por Pasos </a>
-        </li>
-        
-         <li>
-            <a href="ANIMACION 6/index.html"> Proyecto 6 - Clippath y Parallax </a>
-        </li>
+        <li><a href="ANIMACION 1/index.html">Proyecto 1 - Tablero de Ajedrez</a></li>
+        <li><a href="ANIMACION 2/index.html">Proyecto 2 - Animación Básica</a></li>
+        <li><a href="ANIMACION 3/index.html">Proyecto 3 - Movimiento y Tiempo de Animación</a></li>
+        <li><a href="ANIMACION 4/index.html">Proyecto 4 - Animación por Pasos</a></li>
+        <li><a href="ANIMACION 6/index.html">Proyecto 6 - ClipPath y Parallax</a></li>
     </ul>
+
+</div>
+
+<div class="footer">
+     Mis Proyectos de Animación de Graficos © 2026
+</div>
+
 </body>
 </html>
