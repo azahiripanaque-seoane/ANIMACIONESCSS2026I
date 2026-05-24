@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CLIPPATH SEMANA 6 </title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }     
+        .muneco-contenedor {
+            position: relative;
+            width: 450px;
+            height: 600px;
+            background-image: url(img/prado-verde-blanco-escena-parque_1308-45291.avif);
+            background-size: cover;
+            background-position: center;
+            overflow: hidden; 
+            border-radius: 20px;
+        }
+        .sombra-suelo {
+            position: absolute;
+            width: 260px;
+            height: 25px;
+            bottom: 45px; 
+            left: 95px;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 50%;
+            z-index: 1;
+            animation: efecto-sombra 1.2s infinite ease-in-out alternate;
+        }
+        .cuerpo-muñeco {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            animation: ritmo-baile 1.2s infinite ease-in-out alternate;
+        }
+
+        .pieza {
+            position: absolute;
+            background-color: black; 
+            background-size: cover;
+            background-position: center;
+        }
+        .marcos, .marco3 {
+            width: 150px;
+            height: 200px;
+            top: 290px; 
+            left: 125px;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%);
+            background-image: url(img/fondo-textura-jeans_1053-296.avif);
+            z-index: 2;
+        }
+        .marco2 {
+            width: 180px;
+            height: 180px;
+            top: 140px; 
+            left: 110px;
+            clip-path: circle(50% at 50% 50%);
+            background-image: url(img/payazo.png);
+            z-index: 3; 
+        }
+        .marco1 {
+            width: 180px;
+            height: 150px;
+            top: 50px; 
+            left: 110px;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background-image: url(img/fondo-textura-jeans_1053-296.avif);
+            z-index: 4; 
+        }
+        .marco4 {
+            width: 280px;
+            height: 50px;
+            top: 370px; 
+            left: 70px;
+            clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+            background-image: url(img/images.jpg);          
+            z-index: 1; 
+            transform-origin: center center;
+            animation: braceo 1.2s infinite ease-in-out alternate;
+        }
+
+        .pie-izq {
+            width: 140px;
+            height: 70px;
+            top: 480px; 
+            left: 60px;
+            clip-path: ellipse(50% 50% at 50% 50%);
+            z-index: 2;
+            background-image: url(img/images\ \(1\).jpg);
+            transform-origin: right center;
+            animation: zapateo-izq 0.6s infinite ease-in-out alternate;
+        }
+        .pie-der {
+            width: 140px;
+            height: 70px;
+            top: 480px; 
+            left: 198px; 
+            clip-path: ellipse(50% 50% at 50% 50%);
+            z-index: 2;
+            background-image: url(img/images\ \(1\).jpg);
+            transform-origin: left center;
+            animation: zapateo-der 0.6s infinite ease-in-out alternate;
+            animation-delay: 0.3s;
+        }
+
+        .grupo-helado {
+            position: absolute;
+            width: 130px;
+            height: 180px;
+            top: 280px; 
+            left: 290px;
+            transform-origin: 55px 160px; 
+            animation: balanceo-helado 1.2s infinite ease-in-out alternate;
+            z-index: 5;
+        }
+        .cono {
+            width: 73px;
+            height: 110px;
+            top: 78px;
+            left: 20px;
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+            background-image: url(img/Jean\ Amarillo.jpg);
+        }
+        .bola {
+            width: 60px;
+            height: 60px;
+            clip-path: circle(50% at 50% 50%);
+        }
+        .bola1 { 
+            top: 30px; left: 0px; background-color: burlywood;
+         }
+        .bola2 {
+             top: 30px; left: 40px; background-color: palevioletred;
+             }
+        .bola3 { 
+            top: 20px; left: 20px; background-color: bisque;
+         }
+           
+        @keyframes ritmo-baile {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-12px); }
+        }
+
+        @keyframes efecto-sombra {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.85); opacity: 0.5; }
+        }
+
+        @keyframes braceo {
+            0% { transform: rotate(-3deg); }
+            100% { transform: rotate(3deg); }
+        }
+
+        @keyframes zapateo-izq {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-6deg); }
+        }
+        @keyframes zapateo-der {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(6deg); }
+        }
+
+        @keyframes balanceo-helado {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(10deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="muneco-contenedor">
+        <div class="sombra-suelo"></div>
+
+        <div class="cuerpo-muñeco">
+            <div class="pieza marco3"></div> 
+            <div class="pieza marco2"></div> 
+            <div class="pieza marco1"></div> 
+            <div class="pieza marco4"></div>
+            <div class="pieza pie-izq"></div> 
+            <div class="pieza pie-der"></div>
+            <div class="grupo-helado">
+                <div class="pieza cono"></div>
+                <div class="pieza bola bola1"></div>
+                <div class="pieza bola bola2"></div>
+                <div class="pieza bola bola3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
