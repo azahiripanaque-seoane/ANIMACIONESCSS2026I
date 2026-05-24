@@ -1,11 +1,10 @@
 <html>
 <head>
-
-    <title>ANIMACION 3 DIAGONAL MEGAMANX CSS</title>
+    <title>ANIMACION 3 HORIZONTAL MEGAMANX CSS</title>
     <style>
         *{
-            padding: 0;
-            margin: 0;
+            padding: 0px;
+            margin: 0px;
         }
           body {
             padding-top: 100px; 
@@ -36,9 +35,9 @@
             width: 400px;
             height: 200px;
             border: 1px solid black;
-            position: relative;
-            margin: 0 auto;
-            overflow: hidden;
+            position: relative;/*para centrar el div*/
+            margin: 0 auto;/*para centrar el div*/
+            overflow:hidden;/*muestra solo lo interior*/
             background-color: black;
         }
 
@@ -46,34 +45,42 @@
             width: 100px;
             height: 100px;
             background-color: black;
-            position: absolute;
+            position:absolute;/*permite mover el div*/
             left: -100px;
-            top: -100px;
+            top: 50px;
+
             animation: cuadrito 3s infinite linear;
         }
-
+        
         @keyframes cuadrito{
             from{
                 left: -100px;
-                top: -100px;
+
             }
             to{
-                left: 500px;
-                top: 200px;
+
+                left:500px;
             }
         }
         .cuadrito img{
             width: 100px;
             height: 100px;
         }
+
+
     </style>
 </head>
 <body>
-     <a href="index.html" class="btn-volver">Volver</a>
+    <a href="index.html" class="btn-volver">Volver</a>
     <div class="contenedor">
+
         <div class="cuadrito">
+
             <img src="img/megamanx.gif" alt="">
+
         </div>
+
     </div>
+      
 </body>
 </html>
