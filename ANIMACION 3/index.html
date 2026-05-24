@@ -1,22 +1,214 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <title>ANIMACION 3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMACION 3 - Menú de Movimientos</title>
     <style>
+        /*  CONFIGURACIÓN BASE CYBERPUNK */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #050814; /* Fondo oscuro unificado */
+            color: #ffffff;
+            padding: 40px 20px;
+            padding-top: 120px; 
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* EFECTO DE LLUVIA DE CÓDIGO EN MOVIMIENTO */
+        .fondo {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .fondo span {
+            position: absolute;
+            top: -50px;
+            color: rgba(0, 255, 180, 0.25);
+            font-family: monospace;
+            font-size: 14px;
+            animation: caer 10s linear infinite;
+        }
+
+        @keyframes caer {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+        }
+
+        /* Posiciones y velocidades aleatorias para el fondo */
+        .fondo span:nth-child(1) { left: 5%; animation-duration: 6s; }
+        .fondo span:nth-child(2) { left: 15%; animation-duration: 7s; }
+        .fondo span:nth-child(3) { left: 25%; animation-duration: 5s; }
+        .fondo span:nth-child(4) { left: 35%; animation-duration: 8s; }
+        .fondo span:nth-child(5) { left: 45%; animation-duration: 6s; }
+        .fondo span:nth-child(6) { left: 55%; animation-duration: 7s; }
+        .fondo span:nth-child(7) { left: 65%; animation-duration: 5s; }
+        .fondo span:nth-child(8) { left: 75%; animation-duration: 8s; }
+        .fondo span:nth-child(9) { left: 85%; animation-duration: 6s; }
+        .fondo span:nth-child(10) { left: 95%; animation-duration: 7s; }
+
+        /*BOTÓN VOLVER TRANSLÚCIDO */
+        .btn-volver {
+            position: fixed;   
+            top: 25px;         
+            left: 25px;        
+            color: #e5e7eb;    
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            background: rgba(255, 255, 255, 0.05);    
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 213, 0.2);
+            z-index: 99999;    
+            transition: all 0.4s ease;
+            box-shadow: 0px 4px 15px rgba(0, 255, 213, 0.05);
+        }
+
+        .btn-volver:hover {
+            transform: scale(1.05);
+            border: 1px solid #00ffd5;
+            color: #00ffd5;
+            box-shadow: 0 0 15px rgba(0, 255, 213, 0.3);
+            background: rgba(0, 255, 213, 0.05);
+        }
+
+        /* BLOQUES DE SECCIÓN COMPACTOS */
+        .seccion-cyber {
+            background: rgba(15, 26, 51, 0.85); 
+            backdrop-filter: blur(4px); 
+            border: 1px solid rgba(0, 255, 213, 0.15);
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* TÍTULOS DE LAS SECCIONES */
+        h1 {
+            font-size: 18px;
+            color: #00ffd5;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 255, 213, 0.2);
+            padding-bottom: 10px;
+        }
+
+        /*  ESTILO DE ENLACES COMO BOTONES/TARJETAS */
+        .link-cyber {
+            display: block;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            color: #e5e7eb;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 15px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .link-cyber:last-child {
+            margin-bottom: 0;
+        }
+
+        /* EFECTO INTERACTIVO DE NEÓN AL PASAR EL MOUSE */
+        .link-cyber:hover {
+            transform: translateX(8px);
+            background: rgba(0, 255, 213, 0.05);
+            border-color: #00ffd5;
+            color: #00ffd5;
+            box-shadow: 0 0 15px rgba(0, 255, 213, 0.15);
+        }
+
+        /* ADAPTACIÓN PARA CELULARES */
+        @media (max-width: 600px) {
+            body {
+                padding-top: 100px;
+            }
+            .btn-volver {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                padding: 10px 18px;
+                font-size: 12px;
+            }
+            .seccion-cyber {
+                padding: 18px;
+            }
+            h1 {
+                font-size: 15px;
+            }
+            .link-cyber {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>ANIMACIONES CSS1 - MOVIMIENTO</h1>
-    <a href="animacion1.html">Movimiento VERTICAL</a><br>
-    <a href="animacion2.html">Movimiento HORIZONTAL</a><br>
-    <a href="animacion3.html">Movimiento DIAGONAL</a><br>
 
-    <h1>ANIMACIONES CSS2 - MEGAMANX</h1>
-    <a href="animacion1 MEGAMANX.html">Movimiento VERTICAL</a><br>
-    <a href="animacion2 MEGAMANX.html">Movimiento HORIZONTAL</a><br>
-    <a href="animacion3 MEGAMANX.html">Movimiento DIAGONAL</a><br>
+    <!-- Capa del Fondo Animado -->
+    <div class="fondo">
+        <span>&lt;div&gt;</span>
+        <span>keyframes</span>
+        <span>const Y=20;</span>
+        <span>&lt;style&gt;</span>
+        <span>transform()</span>
+        <span>CSS3</span>
+        <span>HTML5</span>
+        <span>.box{}</span>
+        <span>animate()</span>
+        <span>break;</span>
+    </div>
 
-    <h1> ANIMACIONES CSS3 - COHETE</h1>
-    <a href="ANIMACION 5/animacion4.html">Movimiento COHETE</a>
+    <!-- Botón de navegación unificado -->
+    <a href="../index.html" class="btn-volver">← VOLVER</a>
+
+    <!-- SECCIÓN 1 -->
+    <div class="seccion-cyber">
+        <h1>ANIMACIONES CSS1 - MOVIMIENTO</h1>
+        <a class="link-cyber" href="animacion1.html"> Movimiento VERTICAL</a>
+        <a class="link-cyber" href="animacion2.html"> Movimiento HORIZONTAL</a>
+        <a class="link-cyber" href="animacion3.html"> Movimiento DIAGONAL</a>
+    </div>
+
+    <!-- SECCIÓN 2 -->
+    <div class="seccion-cyber">
+        <h1>ANIMACIONES CSS2 - MEGAMANX</h1>
+        <a class="link-cyber" href="animacion1 MEGAMANX.html"> Movimiento VERTICAL</a>
+        <a class="link-cyber" href="animacion2 MEGAMANX.html"> Movimiento HORIZONTAL</a>
+        <a class="link-cyber" href="animacion3 MEGAMANX.html"> Movimiento DIAGONAL</a>
+    </div>
+
+    <!-- SECCIÓN 3 -->
+    <div class="seccion-cyber">
+        <h1>ANIMACIONES CSS3 - COHETE</h1>
+        <a class="link-cyber" href="ANIMACION 5/animacion4.html"> Movimiento COHETE</a>
+    </div>
+
 </body>
 </html>
