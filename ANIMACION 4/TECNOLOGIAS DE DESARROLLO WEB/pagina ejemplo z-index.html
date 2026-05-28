@@ -4,14 +4,28 @@
     </head>
     
     <style>
-    body{
-        background-color: rgb(59, 57, 57);
-    }
     .cuadro1, .cuadro2, .cuadro3{
         width:  600px;
         height: 600px;
         position: absolute;
         border: 1px solid black;
+    }
+    .btn-volver{
+     position: fixed;
+     top: 15px;
+     left: 15px;
+ 
+     background-color: #0d1b4d;
+     color: #1ff5e5;
+     border: 1px solid #1ff5e5;
+     padding: 8px 15px;
+     text-decoration: none;
+     font-family: Arial, sans-serif;
+     font-size: 16px;
+     z-index: 9999;
+    }
+    .btn-volver:hover{
+     transform: scale(1.05);
     }
     .cuadro1{
         background-color: green;
@@ -31,33 +45,13 @@
         left: 300px;
         z-index: 1;
     }
-    .btn-volver {
-       position: absolute;
-       top: 20px;
-       left: 25px !important;
-       color: #f8f1f1;
-       text-decoration: none;
-       font-family: Arial, sans-serif;
-       font-size: 16px;
-       background: rgba(243, 242, 242, 0.15);
-       padding: 10px 20px;
-       border-radius: 6px;
-       border: 1px solid rgba(255, 255, 255, 0.2);
-       transition: all 0.3s ease;
-       z-index: 100; 
-    }
-   /* EFECTO AL PASAR EL CURSOR */
-   .btn-volver:hover {
-       background: rgba(255, 255, 255, 0.3);
-       transform: translateY(-2px);
-       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-   }
     </style>
     <body>
-         <a href="../index.html" class="btn-volver">Volver</a>
+        <a href="index.html" class="btn-volver">Volver</a>
         <div class="cuadro1"></div>
         <div class="cuadro2"></div>
         <div class="cuadro3"></div>
     </body>
     
 </html>
+
