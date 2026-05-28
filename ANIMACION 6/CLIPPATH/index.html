@@ -16,7 +16,24 @@
             align-items: center;
             min-height: 100vh;
             background-color: #f0f0f0;
-        }     
+        }
+        .btn-volver{
+               position: fixed;
+               top: 15px;
+               left: 15px;
+           
+               background-color: #0d1b4d;
+               color: #1ff5e5;
+               border: 1px solid #1ff5e5;
+               padding: 8px 15px;
+               text-decoration: none;
+               font-family: Arial, sans-serif;
+               font-size: 16px;
+               z-index: 9999;
+            }
+           .btn-volver:hover{
+               transform: scale(1.05);
+            }     
         .muneco-contenedor {
             position: relative;
             width: 450px;
@@ -148,31 +165,6 @@
         .bola3 { 
             top: 20px; left: 20px; background-color: bisque;
          }
-         /* BOTÓN VOLVER (ESQUINA SUPERIOR IZQUIERDA) */
-        .btn-volver {
-            position: fixed !important; /* Rompe el flex del body para ubicarse libremente */
-            top: 25px !important;       /* Margen superior */
-            left: 25px !important;      /* Margen izquierdo */
-            color: #ffffff !important;  /* Texto en blanco */
-            text-decoration: none !important;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            background-color: #333333;  /* Color gris oscuro para contrastar con el fondo claro */
-            padding: 10px 20px;
-            border-radius: 8px;
-            border: 1px solid #555555;
-            z-index: 99999 !important;  /* Prioridad máxima por encima de cualquier animación */
-            transition: all 0.2s ease;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* EFECTO AL PASAR EL MOUSE */
-        .btn-volver:hover {
-            background-color: #444444;
-            border-color: #777777;
-            transform: scale(1.05);
-        }
-         
            
         @keyframes ritmo-baile {
             0% { transform: translateY(0); }
@@ -205,7 +197,7 @@
     </style>
 </head>
 <body>
-    <a href="../index.html" class="btn-volver">Volver</a>
+     <a href="../index.html" class="btn-volver">Volver</a>
     <div class="muneco-contenedor">
         <div class="sombra-suelo"></div>
 
