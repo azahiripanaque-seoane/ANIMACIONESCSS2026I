@@ -1,201 +1,72 @@
-<!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnología de desarrollo de software y ejemplo de z-index</title>
+    <title>Tecnologia de desarrollo de software y ejemplo de z-index</title>
+
     <style>
-        /*  CONFIGURACIÓN BASE CYBERPUNK */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
+        body{
+            background-color: #010922;
             font-family: Arial, sans-serif;
-            background-color: #050814; 
-            color: #ffffff;
-            padding: 40px 20px;
-            padding-top: 120px; 
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* EFECTO DE LLUVIA DE CÓDIGO EN MOVIMIENTO */
-        .fondo {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .fondo span {
-            position: absolute;
-            top: -50px;
-            color: rgba(0, 255, 180, 0.25);
-            font-family: monospace;
-            font-size: 14px;
-            animation: caer 10s linear infinite;
-        }
-
-        @keyframes caer {
-            0% {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(110vh);
-                opacity: 0;
-            }
-        }
-
-        /* Posiciones y velocidades aleatorias para el fondo */
-        .fondo span:nth-child(1) { left: 4%; animation-duration: 7s; }
-        .fondo span:nth-child(2) { left: 14%; animation-duration: 5s; }
-        .fondo span:nth-child(3) { left: 24%; animation-duration: 8s; }
-        .fondo span:nth-child(4) { left: 34%; animation-duration: 6s; }
-        .fondo span:nth-child(5) { left: 44%; animation-duration: 9s; }
-        .fondo span:nth-child(6) { left: 54%; animation-duration: 5s; }
-        .fondo span:nth-child(7) { left: 64%; animation-duration: 7s; }
-        .fondo span:nth-child(8) { left: 74%; animation-duration: 6s; }
-        .fondo span:nth-child(9) { left: 84%; animation-duration: 8s; }
-        .fondo span:nth-child(10) { left: 92%; animation-duration: 5s; }
-
-        /* BOTÓN VOLVER TRANSLÚCIDO */
-        .btn-volver {
-            position: fixed;   
-            top: 25px;         
-            left: 25px;        
-            color: #e5e7eb;    
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            background: rgba(255, 255, 255, 0.05);    
-            padding: 12px 24px;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 255, 213, 0.2);
-            z-index: 99999;    
-            transition: all 0.4s ease;
-            box-shadow: 0px 4px 15px rgba(0, 255, 213, 0.05);
-        }
-
-        .btn-volver:hover {
-            transform: scale(1.05);
-            border: 1px solid #00ffd5;
-            color: #00ffd5;
-            box-shadow: 0 0 15px rgba(0, 255, 213, 0.3);
-            background: rgba(0, 255, 213, 0.05);
-        }
-
-        /* CONTENEDOR PRINCIPAL DE PROYECTOS */
-        .seccion-cyber {
-            background: rgba(15, 26, 51, 0.85); /* Translúcido para ver pasar el fondo */
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(0, 255, 213, 0.15);
-            border-radius: 14px;
-            padding: 25px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        /* TÍTULO DEL MENÚ */
-        h1 {
-            font-size: 18px;
-            color: #00ffd5;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            border-bottom: 1px solid rgba(0, 255, 213, 0.2);
-            padding-bottom: 10px;
             text-align: center;
         }
 
-        /* ENLACES DE PROYECTOS COMO TARJETAS */
-        .link-proyecto {
+        h1{
+            background-color: #0d1b4d;
+            color: #1ff5e5;
+            padding: 10px;
+        }
+
+        a{
             display: block;
-            padding: 16px 20px;
-            background: rgba(255, 255, 255, 0.03);
-            color: #e5e7eb;
+            color: white;
             text-decoration: none;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 15px;
-            margin-bottom: 14px;
-            transition: all 0.3s ease;
+            margin: 15px;
+            font-size: 16px;
         }
 
-        /* Quita el margen al último elemento */
-        .link-proyecto:last-child {
-            margin-bottom: 0;
+        a:hover{
+            transform: scale(1.05);
         }
 
-        /* EFECTO HOVER DE NEÓN CON DESPLAZAMIENTO SUAVE */
-        .link-proyecto:hover {
-            transform: translateX(8px);
-            background: rgba(0, 255, 213, 0.05);
-            border-color: #00ffd5;
-            color: #00ffd5;
-            box-shadow: 0 0 15px rgba(0, 255, 213, 0.15);
+        hr{
+            height: 3px;
+            background-color: #1ff5e5;
+            border: none;
         }
 
-        /* ADAPTACIÓN PARA DISPOSITIVOS MÓVILES */
-        @media (max-width: 600px) {
-            body {
-                padding-top: 100px;
-            }
-            .btn-volver {
-                position: absolute;
-                top: 20px;
-                left: 20px;
-                padding: 10px 18px;
-                font-size: 12px;
-            }
-            .seccion-cyber {
-                padding: 18px;
-            }
-            h1 {
-                font-size: 16px;
-            }
-            .link-proyecto {
-                font-size: 14px;
-                padding: 14px;
-            }
+        button{
+            position: absolute;
+            top: 15px;
+            left: 15px;
+
+            background-color: #0d1b4d;
+            color: #1ff5e5;
+            border: 1px solid #1ff5e5;
+            padding: 8px 15px;
+            cursor: pointer;
         }
+
     </style>
+
 </head>
+
 <body>
 
-    <!-- Capa del Fondo Animado -->
-    <div class="fondo">
-        <span>z-index:99</span>
-        <span>position:fixed</span>
-        <span>&lt;section&gt;</span>
-        <span>layer</span>
-        <span>stacking</span>
-        <span>BACKEND</span>
-        <span>FRONTEND</span>
-        <span>rgba()</span>
-        <span>#00ffd5</span>
-        <span>overflow;</span>
-    </div>
+    <button onclick="location.href='../index.html'">
+        Volver
+    </button>
 
-    <!-- Botón de navegación unificado -->
-    <a href="../index.html" class="btn-volver">← VOLVER</a>
+    <h1>TECNOLOGÍAS DE DESARROLLO WEB</h1>
 
-    <!-- Contenedor del Menú Tecnologías y z-index -->
-    <div class="seccion-cyber">
-        <h1>Tecnologías de Desarrollo Web</h1>
-        
-        <a class="link-proyecto" href="Tecnologias de desarrollo web.html">Tecnologías de Desarrollo Web</a>
-        <a class="link-proyecto" href="pagina ejemplo z-index.html">Página de Ejemplo: z-index</a>
-    </div>
+    <hr>
+
+    <a href="Tecnologias de desarrollo web.html">
+        Tecnologías de Desarrollo Web
+    </a>
+
+    <a href="pagina ejemplo z-index.html">
+        Página Ejemplo Z-Index
+    </a>
 
 </body>
 </html>
