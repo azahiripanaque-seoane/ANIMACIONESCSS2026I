@@ -20,27 +20,22 @@ body{
     background:#021014;
     overflow:hidden;
 }
-.btn-volver {
-    position: fixed !important; 
-    top: 25px !important;      
-    left: 25px !important;      
-    color: #ffffff !important;  
-    text-decoration: none !important;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    background-color: #1a262b;  /* Gris azulado oscuro a juego con la escena */
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: 1px solid #2d3f46;
-    z-index: 99999 !important;  /* Capa por encima de las capas parallax, viñeta y oscuridad */
-    transition: all 0.2s ease;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-}
-.btn-volver:hover {
-    background-color: #25353d;
-    border-color: #3f5862;
+.btn-volver{
+     position: fixed;
+     top: 15px;
+     left: 15px;
+
+     background-color: #0d1b4d;
+     color: #1ff5e5;
+     border: 1px solid #1ff5e5;
+     padding: 8px 15px;
+     text-decoration: none;
+     font-family: Arial, sans-serif;
+     font-size: 16px;
+     z-index: 9999;
+    }
+.btn-volver:hover{
     transform: scale(1.05);
-    box-shadow: 0px 4px 20px rgba(143, 252, 255, 0.2); /* Sutil destello cian */
 }
 .contenedor{
     position:relative;
@@ -390,7 +385,7 @@ body{
 </style>
 </head>
 <body>
- <a href="../index.html" class="btn-volver">Volver</a>
+     <a href="../index.html" class="btn-volver">Volver</a>
 <div class="contenedor">
     <div class="escena">
         <div class="luz"></div>
