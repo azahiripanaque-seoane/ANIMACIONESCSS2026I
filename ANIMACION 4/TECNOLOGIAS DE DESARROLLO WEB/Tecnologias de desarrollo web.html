@@ -15,6 +15,23 @@
     position: relative;
     overflow: hidden;
 }
+.btn-volver{
+    position: fixed;
+    top: 15px;
+    left: 15px;
+
+    background-color: #0d1b4d;
+    color: #1ff5e5;
+    border: 1px solid #1ff5e5;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    z-index: 9999;
+}
+.btn-volver:hover{
+    transform: scale(1.05);
+}
 .tarjeta1, .tarjeta2, .tarjeta3, .tarjeta4, .tarjeta5{
     width:200px;
     height:300px;
@@ -46,27 +63,6 @@
     background-image: url(img/BOOTSTRAP.jpg);
     left:800px;
     animation: tarjeta1 3s 1 forwards 12s;
-}
-.btn-volver {
-    position: absolute;
-    top: 20px;
-    left: 25px !important;
-    color: #ffffff;
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 10px 20px;
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-    z-index: 100; 
-}
-/* EFECTO AL PASAR EL CURSOR */
-.btn-volver:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 /*LAS RICAS ANIMACIONES*/
 @keyframes tarjeta1{
@@ -176,7 +172,7 @@
 </style>
 </head>
 <body>
-     <a href="../index.html" class="btn-volver">Volver</a>
+    <a href="index.html" class="btn-volver">Volver</a>
 <div class="contenedor">
     <div class="tarjeta1"></div>
     <div class="tarjeta2"></div>
