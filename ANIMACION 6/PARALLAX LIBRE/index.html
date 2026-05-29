@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARALLAX LIBRE</title>
+
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .btn-volver{
+          position: fixed;
+          top: 15px;
+          left: 15px;
+     
+          background-color: #0d1b4d;
+          color: #1ff5e5;
+          border: 1px solid #1ff5e5;
+          padding: 8px 15px;
+          text-decoration: none;
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          z-index: 9999;
+        }
+        .btn-volver:hover{
+        transform: scale(1.05);
+        }
+
+        body{
+            background-color: black;
+        }
+
+        .contenedor{
+            width: 500px;
+            height: 698px;
+            border: 1px solid white;   
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cielo{
+            position: absolute;
+            left:-200px;
+            top:-150px;
+            filter:blur(5px);
+            animation: cielo 30s forwards;
+        }
+
+        @keyframes cielo{
+            from{
+                transform: scale(1);
+            }
+            to{
+                transform: scale(1.3);
+            }
+        }
+
+        .montaña{
+            position: absolute;
+            height: 600px;
+            top: 0px;
+            transform: scale(1.4); 
+            animation: montaña 30s forwards;
+        }
+
+        @keyframes montaña{
+            from{
+                transform: scale(1.4);
+                top: 0px;
+            }
+            to{
+                transform: scale(1.8); 
+                top: -80px; 
+            }
+        }
+        .persona{
+            position: absolute;
+            width: 800px;
+            left: -150px;
+            top: 300px;
+            animation: persona 15s forwards;
+        }
+
+        @keyframes persona{
+            from{
+                transform: translateY(20px) scale(1);
+            }
+            to{
+                transform: translateY(0px) scale(1.05);
+            }
+        }
+        .neblina{
+            position: absolute;
+            width: 1000px;
+            left: -150px;
+            top: 400px;
+            opacity: 0.8;
+            animation: neblina 10s forwards;
+        }
+        @keyframes neblina{
+            from{
+                transform: translateX(-20px);
+                opacity: 0.5;
+            }
+            to{
+                transform: translateX(20px);
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="btn-volver">Volver</a>
+    <div class="contenedor">
+        <img class="cielo" src="img/Cielo.jpeg" alt="">
+        <img class="montaña" src="img/Montaña.png" alt="">
+        <img class="persona" src="img/Persona.png" alt="">
+        <img class="neblina" src="img/Neblina.png" alt="">
+    </div>
+</body>
+</html>
